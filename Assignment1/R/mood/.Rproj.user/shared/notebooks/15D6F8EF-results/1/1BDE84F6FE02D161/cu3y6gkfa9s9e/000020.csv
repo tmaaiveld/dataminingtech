@@ -1,0 +1,3 @@
+"0","## generate correlation plot to examine collinearity"
+"0","data_agg.rcorr <- rcorr(as.matrix(data_agg[3:length(data_agg)]))"
+"0","ggcorrplot(data_agg.rcorr$r,tl.cex=8.8)"

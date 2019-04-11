@@ -1,0 +1,62 @@
+todo (07/04/2019)
+
+
+- Finish Rmd and share with group (tabulate results)
+
+- create a testing module (SVM and glm only) to test new features, person-based models, other SVM methods, data transformations
+
+
+-----
+
+
+- neural nets: run more trials with transformation? 
+### for example: transform variables at an earlier point (before features)? Better predictions?
+### Run higher stepmax?
+### You can run faster neuralnet simulations with a lower threshold. Check the impact of this on predictions for your current model     and evaluate whether it's a good idea to run short-term simulations first before training a NN properly. 
+- finish neural nets! run for more iterations? or simplify? maybe run bigger nets?
+
+
+
+- somehow grouping features like appCat.communication, call and SMS? 
+
+# generate and compare with patient-specific models
+## easiest way to do this is to subset a single patient and test on them.
+
+# explore bootstrapping?
+
+
+- could play with features a lot more.
+  - transforming variables?
+  - multiply some features, etc., test the results
+
+# adaptable (time-based) windows?
+
+- could delve more into temporal nature of the data - maybe there's a seasonal / month-based pattern that can be extracted?
+- implement missing values in data_agg
+
+- do more visualisations (boxplots, etc.)
+
+- Try normalizing data at earlier point? boxcox and such transformations maybe.
+-- Can use mutate() on columns of the original data. Try Boxcox, etc.
+
+- Last 5 days. Not last five measured days. Might be more accurate to use a temporal window rather than an index window...
+- could modulate window widths. Better/worse predictions, perhaps?
+
+- ok, in the interest of time I've imputed missing values by their mean in daily aggregates. I dropped any remaining missing values for mood average (didn't replace missing values here). However, a lot of approaches to be explored here. I could...
+* replace missing feature values with means and drop only missing target rows from the model.
+* replace missing daily aggregates with averages, drop the few remaining missing feature value rows. <--
+* split the data, and let only the algorithms that can handle missing data (glm, decision tree) take missing values
+  * (combined with above methods)
+* explore whether models trained on full data perform more poorly on incomplete test sets?
+  --> best predictions seemed to be from filling in the mean.
+
+future:
+- explore crossvalidation, gridsearch/gradient descent etc. (loss functions)
+- explore person-based models? -> maybe after picking a main method... (SVM?)
+- SVM kernels? etc.?
+- review lectures ML1
+- explore bootstrapping
+- evaluation
+- parameter tuning
+- produce many more visuals of loss steps etc., maybe loss surfaces 
+- could i maybe predict the first few values for each person (except the first)? generate SOME prediction?
