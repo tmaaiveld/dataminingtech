@@ -1,0 +1,16 @@
+Features
+
+- Cummulative score for competitors (fill NaN with zero)
+- Seasonality (time of year)
+- Price comparisons
+- Average house features (prop_ and ratings)
+- Promotion flag
+- Random bool
+- Position of prop_id within the search
+- Difference between visitor_hist_starrating and prop_starrating
+
+
+EDA:
+- Plotting timelines
+- Clustering by country
+- Ploting geographic locations (user locations vs destinations)
