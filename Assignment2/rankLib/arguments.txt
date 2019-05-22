@@ -1,0 +1,3 @@
+java -Xmx8g -jar RankLib-2.11.jar -train "C:\Users\janse\OneDrive\Bureaublad\Master\Data Mining Techniques\Assignment 2\preprocessed\train.txt" -test "C:\Users\janse\OneDrive\Bureaublad\Master\Data Mining Techniques\Assignment 2\preprocessed\test.txt" -ranker 6  -metric2t ndcg@5 -save "C:\Users\janse\OneDrive\Bureaublad\Master\Data Mining Techniques\Assignment 2\preprocessed\model.txt" -tree 1000 -shrinkage 0.05
+
+java -Xmx8g -jar bin/RankLib.jar -load "C:\Users\janse\OneDrive\Bureaublad\Master\Data Mining Techniques\Assignment 2\preprocessed\model.txt" -rank myResultLists.txt -score myScoreFile.txt
